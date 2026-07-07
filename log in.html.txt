@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Day Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.container{
+    width:360px;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+
+.logo{
+    text-align:center;
+    font-size:45px;
+}
+
+h2{
+    text-align:center;
+    color:#6f4e37;
+    margin:10px 0 20px;
+}
+
+.input-box{
+    margin-bottom:18px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:6px;
+    color:#444;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.password-box{
+    position:relative;
+}
+
+.password-box span{
+    position:absolute;
+    right:12px;
+    top:38px;
+    cursor:pointer;
+    font-size:14px;
+    color:#6f4e37;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#6f4e37;
+    color:white;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#4b2e20;
+}
+
+.links{
+    margin-top:15px;
+    text-align:center;
+}
+
+.links a{
+    text-decoration:none;
+    color:#6f4e37;
+    font-size:14px;
+}
+
+.links a:hover{
+    text-decoration:underline;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="logo">☕</div>
+
+<h2>Coffee Day Login</h2>
+
+<form onsubmit="return login()">
+
+<div class="input-box">
+<label>Email</label>
+<input type="email" id="email" placeholder="Enter your email">
+</div>
+
+<div class="input-box password-box">
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter your password">
+<span onclick="togglePassword()">Show</span>
+</div>
+
+<button type="submit">Login</button>
+
+<div class="links">
+<p><a href="#">Forgot Password?</a></p>
+<br>
+<p>Don't have an account?
+<a href="#">Register</a></p>
+</div>
+
+</form>
+
+</div>
+
+<script>
+function togglePassword(){
+    var pass=document.getElementById("password");
+    if(pass.type==="password"){
+        pass.type="text";
+    }else{
+        pass.type="password";
+    }
+}
+
+function login(){
+
+    var email=document.getElementById("email").value;
+    var password=document.getElementById("password").value;
+
+    if(email==="" || password===""){
+        alert("Please fill all fields.");
+        return false;
+    }
+
+    alert("Login Successful! Welcome to Coffee Day ☕");
+    return false;
+}
+</script>
+
+</body>
+</html>
